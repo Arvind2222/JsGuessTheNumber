@@ -27,36 +27,50 @@
     </head>
 
     <body>
-       
+            <!-- The Main Container -->
             <div class="container">
                 
-                
-                    <div class="card" id = "gameLevel">
-                            <h5 class="card-header">Level: 0 </h5>
-                            <div class="card-body row">
-                                You here at level 0
-                            </div>
-                    </div>
-               
-               <div class="card" id = "guessArea">
+                <!-- Level -->
+                <div class="card" id = "gameLevel">
+
+                        <h5 class="card-header">
+                            Level: 0 
+                        </h5>
+                        <div class="card-body row">
+                            You here at level 0
+                        </div>
+                </div>
+
+               <!-- Guess Area -->
+                <div class="card" id = "guessArea">
                     <h5 class="card-header">Guess the Number: </h5>
-                    <div class="card-body row">
-                    
-                    <input type = "text"  class="form-control col-md-6" name = "inputBox" id = "inputBox" placeholder="Enter your Guess..."  />
-                    &nbsp;&nbsp;
-                    <input type = "button" class="btn btn-info col-md-3" name = "submit" id = "submit" value = "Guess"  /> 
+                        <div class="card-body row">
+                        
+                        <input type = "text"  class="form-control col-md-6" name = "inputBox" id = "inputBox" placeholder="Enter your Guess..."  />
+                        &nbsp;&nbsp;
+                        <input type = "button" class="btn btn-info col-md-3" name = "submit" id = "submit" value = "Guess"  /> 
                     </div>
                 </div>
 
+                <!-- Guess Result -->
                 <div class = "card" id = "guessResult">
-                            <img class="card-img-top" id = "guessResultImage" src="images/pumpkin.svg" alt="Card image cap" />
-                            <div class="card-body">
-                                <h5 class="card-title">Guess Result</h5>
-                                    <div class = "card" id = "guessVerdict">
-                                        <span>Right/Wrong</span>
-                                    </div>
-                                    <a href="#" class="btn btn-warning">Next Level</a>
-                            </div>
+
+                    <img class="card-img-top" id = "guessResultImage" src="images/pumpkin.svg" alt="Card image cap" />
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Guess Result
+                        </h5>
+                            
+                        <!-- Guess Verdict -->
+                        <div class = "card" id = "guessVerdict">
+                            <span>Right/Wrong</span>
+                        </div>
+
+                        <a href="#" class="btn btn-warning">Next Level</a>
+
+                    </div>
                 </div>
                
             </div>
@@ -65,5 +79,6 @@
            <script src = "scripts/jquery-3.3.1.slim.min.js"></script>
            <script src = "scripts/popper.min.js"></script>
            <script src = "scripts/bootstrap.min.js"></script>
+
     </body>
 </html>
