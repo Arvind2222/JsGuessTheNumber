@@ -23,6 +23,27 @@
                 margin: 5% 0%;
             }
 
+            #nextLevelButton{
+
+                display: none;
+            }
+
+            #resultArea{
+                display:none;
+            }
+
+            span{
+                padding: 30px;
+                text-align: center;
+            }
+
+            #GuessResultText{
+                color:rgb(78, 119, 255);
+            }
+
+            
+
+
         </style>
     </head>
 
@@ -55,21 +76,22 @@
                 <!-- Guess Result -->
                 <div class = "card" id = "guessResult">
 
-                    <img class="card-img-top" id = "guessResultImage" src="images/pumpkin.svg" alt="Card image cap" />
+                    <img class="card-img-top" id = "guessResultImage" src="images/nerd.svg" alt="Card image cap" />
 
-                    <div class="card-body">
+                    <div class="card-body" id = "resultArea">
 
                         <h5 class="card-title">
-                            Guess Result
+                            <div id = "GuessResultText" >Guess Result</div>
                         </h5>
                             
                         <!-- Guess Verdict -->
                         <div class = "card" id = "guessVerdict">
-                            <span>Right/Wrong</span>
+                            
                         </div>
 
-                        <a href="#" class="btn btn-warning">Next Level</a>
-
+                        <div class="col text-center"> 
+                            <a href="#" class="btn btn-warning col-md-4 " id = "nextLevelButton" >Next Level</a>
+                        </div>
                     </div>
                 </div>
                
