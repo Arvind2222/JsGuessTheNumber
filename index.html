@@ -16,7 +16,7 @@
             #guessResultImage{
                 height:10%;
                 width: 20%;
-                margin: 5% 0% 0% 40%;
+                margin: 5% 0% 5% 40%;
             }
 
             .card{
@@ -52,13 +52,10 @@
             <div class="container">
                 
                 <!-- Level -->
-                <div class="card" id = "gameLevel">
-
-                        <h5 class="card-header">
-                            Level: 0 
-                        </h5>
-                        <div class="card-body row">
-                            You here at level 0
+                <div class="card border" id = "gameLevel">
+                  
+                        <div class="card-body offset-10 col-2">
+                            <h3><span class="badge badge-pill badge-info"  id = "levelIndicator">Level: 0 </span></h1>
                         </div>
                 </div>
 
@@ -90,7 +87,7 @@
                         </div>
 
                         <div class="col text-center"> 
-                            <a href="#" class="btn btn-warning col-md-4 " id = "nextLevelButton" >Next Level</a>
+                            <a  class="btn btn-warning col-md-4 " id = "nextLevelButton" >Next Level</a>
                         </div>
                     </div>
                 </div>
