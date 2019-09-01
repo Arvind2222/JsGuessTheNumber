@@ -1,0 +1,62 @@
+        #guessResult{
+            margin-top: 4vh; /*Please refer how this affects on different display sizes*/
+        }
+
+        #guessResultImage{
+            height:10%;
+            width: 20%;
+            margin: 5% 0% 5% 40%;
+        }
+
+        .card{
+            margin: 5% 0%;
+        }
+
+        #nextLevelButton{
+
+            display: none;
+        }
+
+        #resultArea{
+            display:none;
+        }
+
+        span{
+            padding: 30px;
+            text-align: center;
+        }
+
+        #GuessResultText{
+            color:rgb(78, 119, 255);
+        }
+        
+        /* Game title container styles */
+
+        #gameTitle{
+            margin: 5% 0%;
+        }
+
+
+        /* Game title styles */
+
+        #title {
+
+        font-family: 'helvetica neue', helvetica, sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: center;
+        border: 2px solid rgba(98, 207, 249, 0.6);
+        background: rgba(230, 230, 230, 0.3);
+        color: rgba(13, 13, 84, 0.6);
+        box-shadow: 1px 1px 2px rgba(0,0,200,0.4);
+        border-radius: 10px;
+        padding: 3px 10px;
+        display: inline-block;
+        cursor: pointer;
+        
+        }
+
+
+        
+       
+

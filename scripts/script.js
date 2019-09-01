@@ -60,7 +60,8 @@
                 /* Show Previous Guesses */
                 $('#previousGuessValues'). append("<span class= 'badge badge-danger rounded-pill' >" + `${guessedValue}` + "</span> &nbsp;");
                 
-
+                /* Reset input field */
+                $('input[name=inputBox').val('');
 
 
                 /* Hide Level is hidden */
@@ -77,10 +78,19 @@
                 /* Success Verdict Color */
                 $('#guessVerdict').css({"color":"green"});
 
+                /* display correct guess in green */
                 $('#previousGuessValues'). append("<span class= 'badge badge-success rounded-pill' >" + `${guessedValue}` + "</span> &nbsp;");
+
+                /* submit button disabled after correct guess  */
+                $('#submit').prop('disabled', true);
 
                 /* Show next level button */
                 $('#nextLevelButton').toggle();
+
+                /* Reset input field */
+                $('input[name=inputBox').val('');
+
+               
             }
 
         return guessedValue;
@@ -104,6 +114,10 @@
 
         /* Change Result Image */
         $('#guessResultImage').attr("src", "images/nerd.svg");
+
+         /* submit button enabled again  */
+         $('#submit').prop('disabled', false);
+
     }
 
 
