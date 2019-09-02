@@ -7,91 +7,88 @@
      * Create Random Number only after document is loaded completely
      * 
      */
-    $(document).ready(function(){
+    $(document).ready(function() {
 
-        randNumber = randomNumber(); 
+        randNumber = randomNumber();
 
         console.log("generated Random Number on document.ready => " + randNumber);
-     
+
     });
-    
+
     /**
      * Get Verdict of guess
      * 
      */
     let checkGuess = () => {
-       
+
         let guessedValue = document.getElementById("inputBox").value;
 
-        
+
         console.log("Guessed Value = " + guessedValue + " | Random Number = " + randNumber);
 
         /* Unhide ResultArea div */
-        $('#resultArea').css({"display":"block"});
-
-       
-        if(guessedValue != randNumber) /* Guessed Incorrectly */
-            {
-                
-                //emotion Array
-                let emotions = ['ghostAngry.svg', 'ghostDelighted.svg', 'ghostInnocent.svg', 'ghostSad.svg', 'owl.svg', 'ghostBleeding.svg', 'devil.svg', 'bat.svg', 'pirate.svg', 'sad.svg'];
-
-                
-                //randomly select emotions
-                let imageIndex = Math.floor(Math.random()*10);
-                console.log("index = " + imageIndex);
+        $('#resultArea').css({ "display": "block" });
 
 
-                /* random emotions till guess is incorrect */
-                $('#guessResultImage').attr("src", `images/${emotions[imageIndex]}`);  
+        if (guessedValue != randNumber) /* Guessed Incorrectly */ {
+
+            //emotion Array
+            let emotions = ['ghostAngry.svg', 'ghostDelighted.svg', 'ghostInnocent.svg', 'ghostSad.svg', 'owl.svg', 'ghostBleeding.svg', 'devil.svg', 'bat.svg', 'pirate.svg', 'sad.svg'];
 
 
-                /* display verdict */
-                if(guessedValue > randNumber)
-                    $('#guessVerdict').html('<span> You guessed a little higher</span>');
-                else
-                    $('#guessVerdict').html('<span> You guessed a little lower</span>');
-
-                /* Verdict Font color */
-                $('#guessVerdict').css({"color":"red"});
+            //randomly select emotions
+            let imageIndex = Math.floor(Math.random() * 10);
+            console.log("index = " + imageIndex);
 
 
-
-                /* Show Previous Guesses */
-                $('#previousGuessValues'). append("<span class= 'badge badge-danger rounded-pill' >" + `${guessedValue}` + "</span> &nbsp;");
-                
-                /* Reset input field */
-                $('input[name=inputBox').val('');
+            /* random emotions till guess is incorrect */
+            $('#guessResultImage').attr("src", `images/${emotions[imageIndex]}`);
 
 
-                /* Hide Level is hidden */
-                $('#nextLevelButton').css({"display":"none"});
-            }
-        else /* Guessed correctly */
-            {   
-                /* happy emotion as guessed correctly! */
-                $('#guessResultImage').attr("src", "images/pumpkin.svg"); 
+            /* display verdict */
+            if (guessedValue > randNumber)
+                $('#guessVerdict').html('<span> You guessed a little higher</span>');
+            else
+                $('#guessVerdict').html('<span> You guessed a little lower</span>');
 
-                /* display verdict */
-                $('#guessVerdict').html('<span>Congrats! You made it ! Try next Level </span>')
-                
-                /* Success Verdict Color */
-                $('#guessVerdict').css({"color":"green"});
+            /* Verdict Font color */
+            $('#guessVerdict').css({ "color": "red" });
 
-                /* display correct guess in green */
-                $('#previousGuessValues'). append("<span class= 'badge badge-success rounded-pill' >" + `${guessedValue}` + "</span> &nbsp;");
 
-                /* submit button disabled after correct guess  */
-                $('#submit').prop('disabled', true);
 
-                /* Show next level button */
-                $('#nextLevelButton').toggle();
+            /* Show Previous Guesses */
+            $('#previousGuessValues').append("<span class= 'badge badge-danger rounded-pill' >" + `${guessedValue}` + "</span> &nbsp;");
 
-                /* Reset input field */
-                $('input[name=inputBox').val('');
+            /* Reset input field */
+            $('input[name=inputBox').val('');
 
-               
-            }
+
+            /* Hide Level is hidden */
+            $('#nextLevelButton').css({ "display": "none" });
+        } else /* Guessed correctly */ {
+            /* happy emotion as guessed correctly! */
+            $('#guessResultImage').attr("src", "images/pumpkin.svg");
+
+            /* display verdict */
+            $('#guessVerdict').html('<span>Congrats! You made it ! Try next Level </span>')
+
+            /* Success Verdict Color */
+            $('#guessVerdict').css({ "color": "green" });
+
+            /* display correct guess in green */
+            $('#previousGuessValues').append("<span class= 'badge badge-success rounded-pill' >" + `${guessedValue}` + "</span> &nbsp;");
+
+            /* submit button disabled after correct guess  */
+            $('#submit').prop('disabled', true);
+
+            /* Show next level button */
+            $('#nextLevelButton').toggle();
+
+            /* Reset input field */
+            $('input[name=inputBox').val('');
+
+
+        }
 
         return guessedValue;
     }
@@ -115,38 +112,40 @@
         /* Change Result Image */
         $('#guessResultImage').attr("src", "images/nerd.svg");
 
-         /* submit button enabled again  */
-         $('#submit').prop('disabled', false);
+        /* submit button enabled again  */
+        $('#submit').prop('disabled', false);
 
     }
 
 
 
-     /**
-      * Random Number  Generator between 1 and 100
-      * 
-      */
+    /**
+     * Random Number  Generator between min and max
+     * 
+     */
 
-     let randomNumber = () => {
-        let rand = Math.floor((Math.random()*100));
+    function getRandomInt(min = 1, max = 100) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
 
-        return rand;
+    let randomNumber = () => {
+        let rand = getRandomInt();
+        return rand
     }
 
 
-   
+
+
+
     /**
      * click eventListener for the submit button.
      * 
      */
 
     let guessvalue = document.querySelector("#submit").addEventListener("click", checkGuess);
-    
+
     /**
      * click eventListener for next Level button.
      */
-    
-    let nextLevel = document.querySelector('#nextLevelButton').addEventListener('click', levelUp );
 
-    
-   
+    let nextLevel = document.querySelector('#nextLevelButton').addEventListener('click', levelUp);
